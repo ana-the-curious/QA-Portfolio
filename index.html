@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Anastasia Kondratiuk · QA Portfolio</title>
+<style>
+:root{
+  --teal:#FFB800;
+  --teal-light:#FFFBE6;
+  --teal-mid:#C88A00;
+  --dark:#1a1a1a;
+  --mid:#444;
+  --muted:#6b7280;
+  --border:#e5e7eb;
+  --bg:#fff;
+  --section-bg:#f9fafb;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;font-size:15px;color:var(--dark);background:var(--bg);line-height:1.7}
+a{color:var(--teal-mid);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* NAV */
+nav{position:sticky;top:0;background:rgba(255,255,255,0.96);border-bottom:1px solid var(--border);z-index:100;padding:0 5vw}
+.nav-inner{max-width:920px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:54px}
+.nav-logo{font-weight:700;font-size:15px;color:var(--teal-mid)}
+.nav-links{display:flex;gap:24px;font-size:13.5px;font-weight:500;color:var(--mid)}
+.nav-links a{color:var(--mid)}
+.nav-links a:hover{color:var(--teal-mid);text-decoration:none}
+
+/* HERO */
+.hero{max-width:920px;margin:0 auto;padding:64px 5vw 52px;display:flex;gap:48px;align-items:flex-start}
+.hero-text{flex:1}
+.hero-eyebrow{font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--teal-mid);margin-bottom:10px}
+.hero h1{font-size:36px;font-weight:700;line-height:1.2;color:var(--dark);margin-bottom:8px}
+.hero-role{font-size:16px;font-weight:600;color:var(--teal-mid);margin-bottom:16px}
+.hero-summary{font-size:15px;color:var(--mid);max-width:560px;margin-bottom:24px;line-height:1.75}
+.hero-badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.hb{font-size:12px;font-weight:600;padding:4px 12px;border-radius:20px;background:var(--teal-light);color:var(--teal-mid)}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:10px 22px;border-radius:6px;font-size:13.5px;font-weight:600;cursor:pointer;transition:opacity .15s}
+.btn-primary{background:var(--teal);color:#3D2700}
+.btn-primary:hover{opacity:.88;text-decoration:none}
+.btn-outline{border:1.5px solid var(--teal-mid);color:var(--teal-mid);background:transparent}
+.btn-outline:hover{background:var(--teal-light);text-decoration:none}
+.hero-photo{width:150px;height:150px;border-radius:50%;object-fit:cover;border:3px solid var(--teal-light);flex-shrink:0;margin-top:8px}
+.hero-photo-placeholder{width:150px;height:150px;border-radius:50%;background:var(--teal-light);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:48px;font-weight:700;color:var(--teal-mid);margin-top:8px}
+
+/* STATS */
+.stats-bar{background:var(--teal);padding:28px 5vw}
+.stats-inner{max-width:920px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;text-align:center}
+.stat-num{font-size:26px;font-weight:700;color:#3D2700}
+.stat-label{font-size:12px;color:rgba(61,39,0,0.65);margin-top:2px}
+
+/* SECTIONS */
+section{padding:56px 5vw}
+section:nth-child(even){background:var(--section-bg)}
+.section-inner{max-width:920px;margin:0 auto}
+.section-label{font-size:11.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--teal-mid);margin-bottom:8px}
+.section-title{font-size:22px;font-weight:700;color:var(--dark);margin-bottom:28px}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.skill-card{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:18px 20px}
+.skill-card h4{font-size:13px;font-weight:700;color:var(--teal-mid);text-transform:uppercase;letter-spacing:.6px;margin-bottom:10px}
+.skill-tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:12px;padding:3px 10px;border-radius:4px;background:var(--section-bg);color:var(--mid);border:1px solid var(--border)}
+
+/* EXPERIENCE */
+.exp-list{display:flex;flex-direction:column;gap:24px}
+.exp-card{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:22px 24px}
+.exp-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:4px}
+.exp-role{font-size:16px;font-weight:700;color:var(--dark)}
+.exp-period{font-size:12.5px;font-weight:600;color:var(--teal-mid);background:var(--teal-light);padding:3px 10px;border-radius:20px;white-space:nowrap}
+.exp-company{font-size:13.5px;font-weight:600;color:var(--teal-mid);margin-bottom:10px}
+.exp-sector{font-size:12px;color:var(--muted);margin-bottom:12px}
+.exp-card ul{margin-left:18px;font-size:13.5px;color:var(--mid)}
+.exp-card li{margin-bottom:5px}
+.exp-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:14px}
+.exp-tag{font-size:11.5px;padding:2px 9px;border-radius:3px;background:#f3f4f6;color:var(--mid)}
+
+/* PROJECTS / PORTFOLIO */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.proj-card{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:22px 24px;display:flex;flex-direction:column}
+.proj-type{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px}
+.proj-web{color:#1e40af;background:#dbeafe;padding:2px 9px;border-radius:3px}
+.proj-mobile{color:#065f46;background:#d1fae5;padding:2px 9px;border-radius:3px}
+.proj-card h3{font-size:16px;font-weight:700;color:var(--dark);margin-bottom:6px}
+.proj-desc{font-size:13.5px;color:var(--mid);margin-bottom:14px;flex:1}
+.proj-artifacts{display:flex;flex-direction:column;gap:7px;margin-bottom:16px}
+.artifact-link{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--teal-mid);padding:7px 11px;border:1px solid var(--border);border-radius:6px;transition:background .15s}
+.artifact-link:hover{background:var(--teal-light);text-decoration:none}
+.artifact-icon{width:16px;height:16px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2}
+.proj-skills{display:flex;flex-wrap:wrap;gap:5px}
+.proj-skill{font-size:11.5px;padding:2px 8px;border-radius:3px;background:#f3f4f6;color:var(--mid)}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.about-block h4{font-size:13.5px;font-weight:700;color:var(--dark);margin-bottom:8px}
+.about-block p{font-size:13.5px;color:var(--mid);line-height:1.75}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
+.contact-card{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:16px 18px;text-align:center}
+.contact-card .cc-label{font-size:11px;text-transform:uppercase;letter-spacing:.8px;font-weight:700;color:var(--muted);margin-bottom:4px}
+.contact-card a,.contact-card span{font-size:13.5px;font-weight:600;color:var(--teal-mid)}
+
+/* FOOTER */
+footer{background:var(--dark);color:rgba(255,255,255,.5);text-align:center;padding:24px;font-size:12.5px}
+footer span{color:#fff;font-weight:600}
+
+@media(max-width:600px){
+  .hero{flex-direction:column-reverse;gap:24px}
+  .hero-photo-placeholder{width:90px;height:90px;font-size:32px;margin:0 auto}
+  .stats-inner{grid-template-columns:repeat(2,1fr)}
+  .about-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">Anastasia Kondratiuk</div>
+    <div class="nav-links">
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-text">
+    <div class="hero-eyebrow">QA Portfolio</div>
+    <h1>Anastasia Kondratiuk</h1>
+    <div class="hero-role">Senior Manual QA Engineer · ISTQB Certified</div>
+    <p class="hero-summary">7 years in Software Testing across E-commerce, EdTech, Travel, SaaS, and Gamedev. Supported 10+ product launches used by over 14 million end users. Specialising in Web, Mobile, and API testing with a strong focus on payment flows, compliance, and building quality processes from the ground up.</p>
+    <div class="hero-badges">
+      <span class="hb">Web · Mobile · API</span>
+      <span class="hb">PCI DSS · WCAG · GDPR</span>
+      <span class="hb">ISTQB Certified</span>
+      <span class="hb">Kyiv, Ukraine · B2–C1 English</span>
+    </div>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#portfolio">View Test Artifacts</a>
+      <a class="btn btn-outline" href="#contact">Get in Touch</a>
+    </div>
+  </div>
+  <div class="hero-photo-placeholder">AK</div>
+</div>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div><div class="stat-num">7+</div><div class="stat-label">Years in QA</div></div>
+    <div><div class="stat-num">10+</div><div class="stat-label">Product Launches</div></div>
+    <div><div class="stat-num">14M+</div><div class="stat-label">End Users Impacted</div></div>
+    <div><div class="stat-num">$250K</div><div class="stat-label">Chargeback Losses Prevented</div></div>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-label">Expertise</div>
+    <div class="section-title">Skills &amp; Tools</div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h4>Testing Types</h4>
+        <div class="skill-tags">
+          <span class="tag">Functional</span><span class="tag">Non-functional</span><span class="tag">Black-Box</span><span class="tag">Integration</span><span class="tag">Accessibility</span><span class="tag">UAT</span><span class="tag">A/B</span><span class="tag">Usability</span><span class="tag">Payment</span><span class="tag">Risk-Based</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h4>Platforms</h4>
+        <div class="skill-tags">
+          <span class="tag">Web (Win/Mac)</span><span class="tag">iOS</span><span class="tag">Android</span><span class="tag">API RESTful</span><span class="tag">SOAP</span><span class="tag">Websockets</span><span class="tag">Webhooks</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h4>Tools</h4>
+        <div class="skill-tags">
+          <span class="tag">Jira</span><span class="tag">TestRail</span><span class="tag">Qase</span><span class="tag">Postman</span><span class="tag">Charles/Fiddler</span><span class="tag">BrowserStack</span><span class="tag">Android Studio</span><span class="tag">Firebase</span><span class="tag">Swagger</span><span class="tag">JMeter</span><span class="tag">Kibana</span><span class="tag">DevTools</span><span class="tag">SQL</span><span class="tag">Figma</span><span class="tag">Miro</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h4>Compliance &amp; Standards</h4>
+        <div class="skill-tags">
+          <span class="tag">PCI DSS</span><span class="tag">WCAG</span><span class="tag">GDPR</span><span class="tag">ISO/IEC 25010</span><span class="tag">ISO/IEC/IEEE 29119</span><span class="tag">ISTQB</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h4>AI-Assisted Testing</h4>
+        <div class="skill-tags">
+          <span class="tag">Claude (Skills, Console)</span><span class="tag">NotebookLM</span><span class="tag">Grammarly</span><span class="tag">Superhuman</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h4>Payment &amp; Integrations</h4>
+        <div class="skill-tags">
+          <span class="tag">Stripe</span><span class="tag">Braintree</span><span class="tag">Gr4vy</span><span class="tag">Braze</span><span class="tag">Microservices</span><span class="tag">AWS Migration</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner">
+    <div class="section-label">Career</div>
+    <div class="section-title">Work Experience</div>
+    <div class="exp-list">
+
+      <div class="exp-card">
+        <div class="exp-top">
+          <div class="exp-role">QA Engineer</div>
+          <span class="exp-period">Dec 2023 – Jan 2025</span>
+        </div>
+        <div class="exp-company">Grammarly</div>
+        <div class="exp-sector">EdTech · SaaS · AI Writing Assistant</div>
+        <ul>
+          <li>Built and maintained a quality process: test plan, test strategy, and transparent quality control steps for App Actions and Grammarly PRO</li>
+          <li>Tested payment provider migration from Braintree to Stripe and Gr4vy integration; ensured PCI DSS compliance — preventing an estimated <strong>$250,000</strong> in chargeback losses and critical production issues</li>
+          <li>Led the QA function across projects: driving quality improvement, establishing processes, mentoring the team, and addressing quality challenges</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="exp-tag">Payment testing</span><span class="exp-tag">PCI DSS</span><span class="exp-tag">A/B testing</span><span class="exp-tag">API testing</span><span class="exp-tag">Accessibility</span><span class="exp-tag">GenAI/NLP</span><span class="exp-tag">Charles</span><span class="exp-tag">Stripe</span><span class="exp-tag">Figma</span>
+        </div>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-top">
+          <div class="exp-role">QA Team Lead</div>
+          <span class="exp-period">Mar 2020 – Dec 2023</span>
+        </div>
+        <div class="exp-company">EPAM Systems</div>
+        <div class="exp-sector">E-commerce · Retail · KIOSK · Canadian Tire</div>
+        <ul>
+          <li>Set up the software testing lifecycle from scratch through to deploying <strong>500+ KIOSK devices</strong> across Canada</li>
+          <li>Helped increase company profit by <strong>7%</strong> through the KIOSK project</li>
+          <li>Introduced accessibility testing, keeping the company WCAG-compliant and avoiding legal penalties</li>
+          <li>Applied risk-based approach to lower product risks and support informed stakeholder decisions under tight deadlines</li>
+          <li>Delivered full test and risk coverage that made the AWS migration significantly smoother</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="exp-tag">Android Studio</span><span class="exp-tag">Mobile testing</span><span class="exp-tag">Postman</span><span class="exp-tag">Charles/Fiddler</span><span class="exp-tag">MS SQL</span><span class="exp-tag">Jenkins</span><span class="exp-tag">WCAG</span><span class="exp-tag">AWS</span>
+        </div>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-top">
+          <div class="exp-role">QA Engineer</div>
+          <span class="exp-period">Dec 2015 – Jan 2017</span>
+        </div>
+        <div class="exp-company">Fareportal</div>
+        <div class="exp-sector">Travel · SMS Platform · Microservices</div>
+        <ul>
+          <li>Created API request suites and developed efficient test cases for continuous integration</li>
+          <li>Reduced performance risks by simulating network conditions — found a cost-effective bug in message delivery under load</li>
+          <li>Introduced the first automated tests, demonstrating automation value and kick-starting the automation process</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="exp-tag">Microservices</span><span class="exp-tag">JMeter</span><span class="exp-tag">SOAPUI</span><span class="exp-tag">Postman</span><span class="exp-tag">Performance testing</span><span class="exp-tag">Jenkins</span>
+        </div>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-top">
+          <div class="exp-role">Junior QA Engineer</div>
+          <span class="exp-period">Oct 2014 – Nov 2015</span>
+        </div>
+        <div class="exp-company">Vostok Games</div>
+        <div class="exp-sector">Gamedev · Survarium (Online Multiplayer FPS)</div>
+        <ul>
+          <li>Leveraged customer support knowledge to transition into QA and improve game quality</li>
+          <li>Enhanced documentation with real customer feedback; tested game mechanics and contributed to bug fixes</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="exp-tag">Jira</span><span class="exp-tag">Confluence</span><span class="exp-tag">SQL</span><span class="exp-tag">Desktop testing</span><span class="exp-tag">Lua scripting</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="section-inner">
+    <div class="section-label">Test Artifacts</div>
+    <div class="section-title">QA Portfolio Projects</div>
+    <div class="projects-grid">
+
+      <div class="proj-card">
+        <span class="proj-type proj-web">Web App</span>
+        <h3>Dripify — LinkedIn Automation SaaS</h3>
+        <p class="proj-desc">Tested the Limits &amp; Activity Control feature and the Book a Demo form. Applied risk-based approach, equivalence partitioning, boundary value analysis, and state transition techniques. Uncovered 4 defects including a revenue-critical plan-gating bug.</p>
+        <div class="proj-artifacts">
+          <a class="artifact-link" href="dripify-checklist-test-cases.pdf" target="_blank">
+            <svg class="artifact-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            Test Cases &amp; Checklist (PDF)
+          </a>
+          <a class="artifact-link" href="dripify-bug-reports.pdf" target="_blank">
+            <svg class="artifact-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            Bug Reports — 4 Defects (PDF)
+          </a>
+        </div>
+        <div class="proj-skills">
+          <span class="proj-skill">Risk-based testing</span><span class="proj-skill">BVA</span><span class="proj-skill">Equivalence partitioning</span><span class="proj-skill">State transition</span><span class="proj-skill">Plan-gating</span>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <span class="proj-type proj-mobile">Mobile App (iOS/Android)</span>
+        <h3>MISTO — Ukrainian Civic Mobile App</h3>
+        <p class="proj-desc">Exploratory testing of a public safety &amp; emergency alerts module for a Ukrainian city services app. Produced a Test Plan covering real-time alert delivery, offline shelter maps, and accessibility. Applied ISO 25010 quality characteristics and mobile-specific testing techniques.</p>
+        <div class="proj-artifacts">
+          <a class="artifact-link" href="misto-test-plan.pdf" target="_blank">
+            <svg class="artifact-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            Test Plan — Public Safety Module (PDF)
+          </a>
+          <a class="artifact-link" href="misto-bug-reports.pdf" target="_blank">
+            <svg class="artifact-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            Bug Reports — Exploratory Session (PDF)
+          </a>
+        </div>
+        <div class="proj-skills">
+          <span class="proj-skill">Mobile testing</span><span class="proj-skill">Exploratory</span><span class="proj-skill">iOS</span><span class="proj-skill">Charles Proxy</span><span class="proj-skill">ISO 25010</span><span class="proj-skill">Accessibility</span><span class="proj-skill">Postman</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-label">Background</div>
+    <div class="section-title">About Me</div>
+    <div class="about-grid">
+      <div class="about-block">
+        <h4>My approach to quality</h4>
+        <p>I believe quality is not a phase — it's a mindset that runs through every stage of the SDLC. I enjoy building testing processes from the ground up, asking the right questions early, and making risk visible to stakeholders before it becomes a production incident. My background spans E-commerce, EdTech, Travel, SaaS, and Gamedev, which has taught me to adapt quickly to new domains and contexts.</p>
+      </div>
+      <div class="about-block">
+        <h4>Values &amp; what drives me</h4>
+        <p>People, curiosity, learning, impact, and clarity. I care about the end user and about the teams I work with. I'm currently expanding my skills in Python, automation, and AI-assisted testing — because I believe the best QA engineers of tomorrow will combine deep manual insight with the ability to build and validate intelligent systems.</p>
+      </div>
+      <div class="about-block">
+        <h4>Education</h4>
+        <p>Philologist — English Translation &amp; Literature, Taurida National University V.I. Vernadsky. Certificate in Translation Studies. My analytical background in linguistics has shaped the way I read specifications, write bug reports, and communicate with cross-functional teams.</p>
+      </div>
+      <div class="about-block">
+        <h4>Certifications &amp; community</h4>
+        <p>ISTQB Certified. Active member of the Ukrainian QA professional community. Fluent in Ukrainian and Russian; English at B2–C1 level. Open to remote and hybrid roles globally.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-label">Let's connect</div>
+    <div class="section-title">Get in Touch</div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="cc-label">Email</div>
+        <a href="mailto:hamu.photo@gmail.com">hamu.photo@gmail.com</a>
+      </div>
+      <div class="contact-card">
+        <div class="cc-label">LinkedIn</div>
+        <a href="https://linkedin.com" target="_blank">Anastasia Kondratiuk</a>
+      </div>
+      <div class="contact-card">
+        <div class="cc-label">Telegram</div>
+        <a href="https://t.me/" target="_blank">@your_handle</a>
+      </div>
+      <div class="contact-card">
+        <div class="cc-label">Location</div>
+        <span>Kyiv, Ukraine · Remote-ready</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Built by <span>Anastasia Kondratiuk</span> · Senior Manual QA Engineer · ISTQB Certified · Kyiv, Ukraine</p>
+</footer>
+
+</body>
+</html>
